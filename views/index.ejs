@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/styles/home.css" />
+  <title>Chat App</title>
+  <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div id="main-wrapper">
+    <div id="room-container">
+      <h2>Available rooms:</h2>
+      <% if(Object.keys(rooms).length != 0) { Object.keys(rooms).forEach(room => { %>
+        <div>
+        <div class="left-room-container">
+          <div class="room-contents"><%= room %></div>
+        </div>
+        <div class="right-room-container">
+          <a class="btn" href="/<%= room %>"><span>Join</span></a>
+        </div>
+      </div>
+      <% })} else { %>
+        <h3>There are currently no rooms to display.</h3>
+        <% } %>
+    </div>
+    <div id="create-room-container">
+      <h2>Create a room:</h2>
+      <form action="/room" method="POST">
+        <input name="room" type="text" placeholder="Enter room name" required>
+        <button class="btn" type="submit"><span>New Room</span></button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

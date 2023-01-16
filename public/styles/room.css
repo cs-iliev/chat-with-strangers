@@ -1,0 +1,105 @@
+body {
+    background: linear-gradient(to right, rgb(168, 203, 242), rgba(127, 192, 235, 0.6));
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #chat-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    min-height: 50vh;
+    margin-top: 100px;
+    overflow-y: auto;
+    height: 50%;
+    max-height: 400px;
+  }
+
+  #message-container {
+    width: 80%;
+    max-width: 400px;
+    padding-bottom: 10px;
+  }
+
+  #message-container div {
+    background-color: #CCC;
+    padding: 5px;
+    overflow-wrap: break-word;
+    border-radius: 25px;
+    border: 2px bold black;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 10px;
+  }
+
+  #message-container div:nth-child(2n) {
+    background-color: #FFF;
+  }
+
+  #send-container {
+    position: fixed;
+    padding-bottom: 30px;
+    bottom: 0;
+    width: 400px;
+    display: flex;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-left: 50px;
+    padding-top: 10px;
+  }
+
+  #message-input {
+    width: 200px;
+    border: 2px solid black;
+    border-radius: 25px;
+    height: 20px;
+    margin-top: 15px;
+    margin-right: 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 5px 10px 10px;
+  }
+
+  .btn {
+    display: inline;
+    border-radius: 4px;
+    background-color: #2590d6;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
+    width: 125px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 10px;
+    float: right;
+    box-shadow: rgba(0, 0, 0, 0.4) 5px 10px 10px;
+  }
+  
+  .btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .btn:hover span {
+    padding-right: 25px;
+  }
+  
+  .btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
